@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>WASM OpenGL</title>
+	<style>
+		body, html
+		{
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+		}
+		canvas
+		{
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas"></canvas>
+	<script async type="text/javascript" src="index.js"></script>
+	<script>
+		var Module =
+		{
+			canvas: document.getElementById("canvas"), // Reference the canvas element
+			postRun: [function() { resizeCanvas(); }],
+		};
+
+		// Resize the canvas to fit the window
+		const canvas = Module.canvas;
+		const resizeCanvas =
+		() =>
+		{
+			canvas.width = window.innerWidth;
+			canvas.height = window.innerHeight;
+		};
+
+		// Ensure the canvas is resized on window load and resize
+		window.addEventListener("resize", resizeCanvas);
+	</script>
+</body>
+</html>
