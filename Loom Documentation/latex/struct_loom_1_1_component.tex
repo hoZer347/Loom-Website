@@ -1,0 +1,89 @@
+\doxysection{Loom\+::Component\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Struct Template Reference}
+\hypertarget{struct_loom_1_1_component}{}\label{struct_loom_1_1_component}\index{Loom::Component$<$ T $>$@{Loom::Component$<$ T $>$}}
+Inheritance diagram for Loom\+::Component\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{struct_loom_1_1_component}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{struct_loom_1_1_component_base}{Loom\+::\+Component\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual constexpr void {\bfseries On\+Attach} ()
+\item 
+virtual constexpr void {\bfseries On\+Detach} ()
+\item 
+virtual constexpr void {\bfseries On\+Gui} ()
+\item 
+virtual constexpr void {\bfseries On\+Update} ()
+\item 
+virtual constexpr void {\bfseries On\+Render} ()
+\item 
+virtual constexpr void {\bfseries On\+Physics} ()
+\item 
+const std\+::string \& {\bfseries Get\+Class\+Name} () const
+\item 
+\mbox{\hyperlink{struct_loom_1_1_game_object}{Game\+Object}} const \texorpdfstring{$\ast$}{*} {\bfseries Get\+Game\+Object} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{struct_loom_1_1_loom_object}{Loom\+::\+Loom\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::string \& {\bfseries Get\+Name} ()
+\item 
+void {\bfseries Set\+Name} (const std\+::string \&name)
+\item 
+constexpr std\+::string {\bfseries Name\+And\+ID} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{struct_loom_1_1_loom_object}{Loom\+::\+Loom\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T = Loom\+Object$>$ }\\static constexpr const T \texorpdfstring{$\ast$}{*} {\bfseries Get\+By\+ID} (const uint64\+\_\+t \&ID)
+\item 
+{\footnotesize template$<$typename T = Loom\+Object$>$ }\\static constexpr T \texorpdfstring{$\ast$}{*} {\bfseries Get\+By\+Name} (const std\+::string \&name)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{struct_loom_1_1_loom_object}{Loom\+::\+Loom\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+const uint64\+\_\+t {\bfseries m\+\_\+\+ID} = Initialize()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{struct_loom_1_1_component_base}{Loom\+::\+Component\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries Gui} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{struct_loom_1_1_loom_object}{Loom\+::\+Loom\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+uint64\+\_\+t {\bfseries Initialize} ()
+\item 
+virtual void {\bfseries On\+Serialize} ()
+\item 
+virtual void {\bfseries On\+Deserialize} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{struct_loom_1_1_component_base}{Loom\+::\+Component\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_loom_1_1_game_object}{Game\+Object}} \texorpdfstring{$\ast$}{*} {\bfseries m\+\_\+game\+Object}
+\item 
+const char \texorpdfstring{$\ast$}{*} {\bfseries m\+\_\+type\+\_\+name}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{struct_loom_1_1_loom_object}{Loom\+::\+Loom\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string {\bfseries m\+\_\+name}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{struct_loom_1_1_loom_object}{Loom\+::\+Loom\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::recursive\+\_\+mutex {\bfseries mutex}
+\item 
+static std\+::unordered\+\_\+map$<$ uint64\+\_\+t, \mbox{\hyperlink{struct_loom_1_1_loom_object}{Loom\+Object}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries by\+\_\+id} \{ \}
+\item 
+static std\+::unordered\+\_\+map$<$ std\+::string, \mbox{\hyperlink{struct_loom_1_1_loom_object}{Loom\+Object}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries by\+\_\+name} \{ \}
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Loom/\+Loom WASM/Component.\+h\end{DoxyCompactItemize}

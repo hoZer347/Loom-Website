@@ -1,0 +1,104 @@
+\doxysection{Loom\+::Scene Struct Reference}
+\hypertarget{struct_loom_1_1_scene}{}\label{struct_loom_1_1_scene}\index{Loom::Scene@{Loom::Scene}}
+Inheritance diagram for Loom\+::Scene\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{struct_loom_1_1_scene}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_loom_1_1_scene_a29ff0013747977c2deb7bbe1c0151180}\label{struct_loom_1_1_scene_a29ff0013747977c2deb7bbe1c0151180} 
+{\bfseries Scene} (const std\+::string \&name="{}Scene"{}, int thread\+\_\+id=0)
+\item 
+\Hypertarget{struct_loom_1_1_scene_a1c4829f1e85bc984d9b9b764ac6392e6}\label{struct_loom_1_1_scene_a1c4829f1e85bc984d9b9b764ac6392e6} 
+{\footnotesize template$<$typename T$>$ }\\T \texorpdfstring{$\ast$}{*} {\bfseries Attach} (auto \&\&... args)
+\item 
+\Hypertarget{struct_loom_1_1_scene_abd40fd3fafa3b768cdd507f620d1da3a}\label{struct_loom_1_1_scene_abd40fd3fafa3b768cdd507f620d1da3a} 
+\mbox{\hyperlink{struct_loom_1_1_game_object}{Game\+Object}} \texorpdfstring{$\ast$}{*} {\bfseries Add\+Child} (const std\+::string \&m\+\_\+name="{}New Game\+Object"{})
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{struct_loom_1_1_loom_object}{Loom\+::\+Loom\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::string \& {\bfseries Get\+Name} ()
+\item 
+void {\bfseries Set\+Name} (const std\+::string \&name)
+\item 
+constexpr std\+::string {\bfseries Name\+And\+ID} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_loom_1_1_scene_aadd9036496e8f318e1433d068df4b228}\label{struct_loom_1_1_scene_aadd9036496e8f318e1433d068df4b228} 
+static std\+::atomic$<$ bool $>$ {\bfseries is\+\_\+engine\+\_\+running} = false
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_loom_1_1_scene_a2b53e4dc45c85a2cb58b035f21edd095}\label{struct_loom_1_1_scene_a2b53e4dc45c85a2cb58b035f21edd095} 
+int {\bfseries thread\+\_\+id}
+\item 
+\Hypertarget{struct_loom_1_1_scene_a6d3e531219bac2af54c0643ba9f14408}\label{struct_loom_1_1_scene_a6d3e531219bac2af54c0643ba9f14408} 
+\mbox{\hyperlink{struct_loom_1_1_game_object}{Game\+Object}} {\bfseries root}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{struct_loom_1_1_loom_object}{Loom\+::\+Loom\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string {\bfseries m\+\_\+name}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_loom_1_1_scene_afddacc63554ecdac53f05e321fe78272}\label{struct_loom_1_1_scene_afddacc63554ecdac53f05e321fe78272} 
+static std\+::recursive\+\_\+mutex {\bfseries mutex} \{ \}
+\item 
+\Hypertarget{struct_loom_1_1_scene_a3806cb00def3ca779bcde0d16dd3e1c9}\label{struct_loom_1_1_scene_a3806cb00def3ca779bcde0d16dd3e1c9} 
+static std\+::vector$<$ \mbox{\hyperlink{struct_loom_1_1_scene}{Scene}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries all\+Scenes} \{ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{struct_loom_1_1_loom_object}{Loom\+::\+Loom\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::recursive\+\_\+mutex {\bfseries mutex}
+\item 
+static std\+::unordered\+\_\+map$<$ uint64\+\_\+t, \mbox{\hyperlink{struct_loom_1_1_loom_object}{Loom\+Object}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries by\+\_\+id} \{ \}
+\item 
+static std\+::unordered\+\_\+map$<$ std\+::string, \mbox{\hyperlink{struct_loom_1_1_loom_object}{Loom\+Object}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries by\+\_\+name} \{ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_loom_1_1_scene_a71f74dc1214f76a57a7835b8e8f85f31}\label{struct_loom_1_1_scene_a71f74dc1214f76a57a7835b8e8f85f31} 
+struct {\bfseries Main\+Menu}
+\item 
+\Hypertarget{struct_loom_1_1_scene_af33d4d98d537f7a993d06c4655e42c31}\label{struct_loom_1_1_scene_af33d4d98d537f7a993d06c4655e42c31} 
+struct {\bfseries Engine}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{struct_loom_1_1_loom_object}{Loom\+::\+Loom\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T = Loom\+Object$>$ }\\static constexpr const T \texorpdfstring{$\ast$}{*} {\bfseries Get\+By\+ID} (const uint64\+\_\+t \&ID)
+\item 
+{\footnotesize template$<$typename T = Loom\+Object$>$ }\\static constexpr T \texorpdfstring{$\ast$}{*} {\bfseries Get\+By\+Name} (const std\+::string \&name)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{struct_loom_1_1_loom_object}{Loom\+::\+Loom\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+const uint64\+\_\+t {\bfseries m\+\_\+\+ID} = Initialize()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{struct_loom_1_1_loom_object}{Loom\+::\+Loom\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+uint64\+\_\+t {\bfseries Initialize} ()
+\item 
+virtual void {\bfseries On\+Serialize} ()
+\item 
+virtual void {\bfseries On\+Deserialize} ()
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Loom/\+Loom WASM/Scene.\+h\item 
+Loom/\+Loom WASM/Scene.\+cpp\end{DoxyCompactItemize}

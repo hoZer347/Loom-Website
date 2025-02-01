@@ -1,0 +1,71 @@
+\doxysection{Loom\+::Engine Struct Reference}
+\hypertarget{struct_loom_1_1_engine}{}\label{struct_loom_1_1_engine}\index{Loom::Engine@{Loom::Engine}}
+
+
+{\ttfamily \#include $<$Engine.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_loom_1_1_engine_a49fb088151819680323e83ecbe568460}\label{struct_loom_1_1_engine_a49fb088151819680323e83ecbe568460} 
+void {\bfseries Init} ()
+\item 
+\Hypertarget{struct_loom_1_1_engine_a9fe9ae2570d9e931dbe45772047b92df}\label{struct_loom_1_1_engine_a9fe9ae2570d9e931dbe45772047b92df} 
+void {\bfseries Start} ()
+\item 
+\Hypertarget{struct_loom_1_1_engine_aaeb6ec8d5095a8537a77904c6e333aa5}\label{struct_loom_1_1_engine_aaeb6ec8d5095a8537a77904c6e333aa5} 
+void {\bfseries Stop} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_loom_1_1_engine_a1b2aa1882ef0e7cbea5ffdbe956fb394}\label{struct_loom_1_1_engine_a1b2aa1882ef0e7cbea5ffdbe956fb394} 
+static void {\bfseries Set\+Update\+Function} (const Task \&task)
+\item 
+\Hypertarget{struct_loom_1_1_engine_a485a7798bbed07cb27838ecfe5d25c3d}\label{struct_loom_1_1_engine_a485a7798bbed07cb27838ecfe5d25c3d} 
+static void {\bfseries Queue\+Task} (const Task \&task)
+\item 
+\Hypertarget{struct_loom_1_1_engine_ab20a1dc629a58ca8cba2429d913bdcf8}\label{struct_loom_1_1_engine_ab20a1dc629a58ca8cba2429d913bdcf8} 
+static const size\+\_\+t {\bfseries Get\+Unique\+ID} ()
+\item 
+\Hypertarget{struct_loom_1_1_engine_a431180509884832f8a4f80c548350831}\label{struct_loom_1_1_engine_a431180509884832f8a4f80c548350831} 
+static void {\bfseries render\+Frame} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_loom_1_1_engine_aad6eaef5d60cbfcf2c039fc5452eaa33}\label{struct_loom_1_1_engine_aad6eaef5d60cbfcf2c039fc5452eaa33} 
+static bool {\bfseries do\+GUI} = true
+\item 
+\Hypertarget{struct_loom_1_1_engine_a219628bae31f84e58b891def97656d74}\label{struct_loom_1_1_engine_a219628bae31f84e58b891def97656d74} 
+static unsigned int {\bfseries shader\+Program} = 0
+\item 
+\Hypertarget{struct_loom_1_1_engine_a3114dbc049f8556ae3c0d6db6b16aee7}\label{struct_loom_1_1_engine_a3114dbc049f8556ae3c0d6db6b16aee7} 
+static unsigned int {\bfseries VAO} = 0
+\item 
+\Hypertarget{struct_loom_1_1_engine_a9c08f75115e5ffd9bf478200e0520ec8}\label{struct_loom_1_1_engine_a9c08f75115e5ffd9bf478200e0520ec8} 
+static unsigned int {\bfseries VBO} = 0
+\item 
+\Hypertarget{struct_loom_1_1_engine_a2d200ce69baf9f7b14488d3219057614}\label{struct_loom_1_1_engine_a2d200ce69baf9f7b14488d3219057614} 
+static unsigned int {\bfseries EBO} = 0
+\item 
+\Hypertarget{struct_loom_1_1_engine_adb72890aedfb079958bb553a3d4213d1}\label{struct_loom_1_1_engine_adb72890aedfb079958bb553a3d4213d1} 
+static GLFWwindow \texorpdfstring{$\ast$}{*} {\bfseries window} = nullptr
+\item 
+\Hypertarget{struct_loom_1_1_engine_a73c237ea13a3da62ff3888520b053041}\label{struct_loom_1_1_engine_a73c237ea13a3da62ff3888520b053041} 
+static bool {\bfseries is\+Running}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{struct_loom_1_1_engine}{Loom\+::\+Engine}
+\begin{DoxyItemize}
+\item Manages the runtime of the application
+\item Updates all Game\+Objects
+\item Manages the backend Open\+GL and Im\+Gui instances 
+\end{DoxyItemize}
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Loom/\+Loom WASM/Engine.\+h\item 
+Loom/\+Loom WASM/Engine.\+cpp\end{DoxyCompactItemize}

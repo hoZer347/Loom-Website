@@ -1,0 +1,137 @@
+\doxysection{Loom\+::Game\+Object Struct Reference}
+\hypertarget{struct_loom_1_1_game_object}{}\label{struct_loom_1_1_game_object}\index{Loom::GameObject@{Loom::GameObject}}
+Inheritance diagram for Loom\+::Game\+Object\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{struct_loom_1_1_game_object}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_loom_1_1_game_object_a56876274f184bd304946e1d2c6eaf110}\label{struct_loom_1_1_game_object_a56876274f184bd304946e1d2c6eaf110} 
+{\footnotesize template$<$typename T$>$ }\\T \texorpdfstring{$\ast$}{*} {\bfseries Attach} (auto \&\&... args)
+\item 
+\Hypertarget{struct_loom_1_1_game_object_a8b5d87dcac7914dbb601af15cd4e9f29}\label{struct_loom_1_1_game_object_a8b5d87dcac7914dbb601af15cd4e9f29} 
+{\footnotesize template$<$typename T$>$ }\\T \texorpdfstring{$\ast$}{*} {\bfseries Get\+Component} ()
+\item 
+\Hypertarget{struct_loom_1_1_game_object_a035f1dc5fa7a57262f8dd617979af337}\label{struct_loom_1_1_game_object_a035f1dc5fa7a57262f8dd617979af337} 
+{\footnotesize template$<$typename T$>$ }\\bool {\bfseries Detach} ()
+\item 
+\Hypertarget{struct_loom_1_1_game_object_ac2e5eb3c5cfbd0465cd545dce79b74a3}\label{struct_loom_1_1_game_object_ac2e5eb3c5cfbd0465cd545dce79b74a3} 
+void {\bfseries Remove\+Child} (\mbox{\hyperlink{struct_loom_1_1_game_object}{Game\+Object}} \texorpdfstring{$\ast$}{*}game\+Object)
+\item 
+\Hypertarget{struct_loom_1_1_game_object_aedd378d4d731714c67d090f80be72bbd}\label{struct_loom_1_1_game_object_aedd378d4d731714c67d090f80be72bbd} 
+void {\bfseries Set\+Thread\+ID} (int thread\+\_\+id)
+\item 
+\Hypertarget{struct_loom_1_1_game_object_afeadd0a377973b472410723a8abc5f36}\label{struct_loom_1_1_game_object_afeadd0a377973b472410723a8abc5f36} 
+void {\bfseries Destroy} ()
+\item 
+\Hypertarget{struct_loom_1_1_game_object_ae74993881d1116978e0f3c7e741ab37d}\label{struct_loom_1_1_game_object_ae74993881d1116978e0f3c7e741ab37d} 
+\mbox{\hyperlink{struct_loom_1_1_game_object}{Game\+Object}} \texorpdfstring{$\ast$}{*} {\bfseries Add\+Child} (const std\+::string \&name="{}New Game\+Object"{})
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{struct_loom_1_1_loom_object}{Loom\+::\+Loom\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::string \& {\bfseries Get\+Name} ()
+\item 
+void {\bfseries Set\+Name} (const std\+::string \&name)
+\item 
+constexpr std\+::string {\bfseries Name\+And\+ID} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_loom_1_1_game_object_a3349b4ecbb9fdd9a8d3406a09de38e8f}\label{struct_loom_1_1_game_object_a3349b4ecbb9fdd9a8d3406a09de38e8f} 
+{\footnotesize template$<$typename T$>$ }\\static void {\bfseries Register\+Component} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{struct_loom_1_1_loom_object}{Loom\+::\+Loom\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T = Loom\+Object$>$ }\\static constexpr const T \texorpdfstring{$\ast$}{*} {\bfseries Get\+By\+ID} (const uint64\+\_\+t \&ID)
+\item 
+{\footnotesize template$<$typename T = Loom\+Object$>$ }\\static constexpr T \texorpdfstring{$\ast$}{*} {\bfseries Get\+By\+Name} (const std\+::string \&name)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_loom_1_1_game_object_a151794f0e9e0632eab2945ac68963368}\label{struct_loom_1_1_game_object_a151794f0e9e0632eab2945ac68963368} 
+{\bfseries Game\+Object} (\mbox{\hyperlink{struct_loom_1_1_game_object}{Game\+Object}} \texorpdfstring{$\ast$}{*}parent, const std\+::string \&name, const int \&thread\+\_\+id)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{struct_loom_1_1_loom_object}{Loom\+::\+Loom\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+uint64\+\_\+t {\bfseries Initialize} ()
+\item 
+virtual void {\bfseries On\+Serialize} ()
+\item 
+virtual void {\bfseries On\+Deserialize} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_loom_1_1_game_object_ad41b613a87f09c28f2237c767679f55b}\label{struct_loom_1_1_game_object_ad41b613a87f09c28f2237c767679f55b} 
+bool {\bfseries m\+\_\+inherit\+\_\+thread\+\_\+id}
+\item 
+\Hypertarget{struct_loom_1_1_game_object_afeb45fce3efaf4bfe7abb49ae00f4a4a}\label{struct_loom_1_1_game_object_afeb45fce3efaf4bfe7abb49ae00f4a4a} 
+int {\bfseries m\+\_\+thread\+ID} = 0
+\item 
+\Hypertarget{struct_loom_1_1_game_object_af83569443fda03b72aa795915e08d404}\label{struct_loom_1_1_game_object_af83569443fda03b72aa795915e08d404} 
+std\+::vector$<$ \mbox{\hyperlink{struct_loom_1_1_game_object}{Game\+Object}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries m\+\_\+children} \{ \}
+\item 
+\Hypertarget{struct_loom_1_1_game_object_ac923baa09c9d52b89b98421c13c79c6f}\label{struct_loom_1_1_game_object_ac923baa09c9d52b89b98421c13c79c6f} 
+std\+::vector$<$ \mbox{\hyperlink{struct_loom_1_1_component_base}{Component\+Base}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries m\+\_\+components} \{ \}
+\item 
+\Hypertarget{struct_loom_1_1_game_object_a4b855f564b70e7b6d3625e78d094b704}\label{struct_loom_1_1_game_object_a4b855f564b70e7b6d3625e78d094b704} 
+std\+::vector$<$ \mbox{\hyperlink{struct_loom_1_1_component_base}{Component\+Base}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries m\+\_\+updateables} \{ \}
+\item 
+\Hypertarget{struct_loom_1_1_game_object_a619c7dca49568df29de0d05587f98724}\label{struct_loom_1_1_game_object_a619c7dca49568df29de0d05587f98724} 
+std\+::vector$<$ \mbox{\hyperlink{struct_loom_1_1_component_base}{Component\+Base}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries m\+\_\+renderables} \{ \}
+\item 
+\Hypertarget{struct_loom_1_1_game_object_ab2a09af78b709fb5a3f8cf4735f67a90}\label{struct_loom_1_1_game_object_ab2a09af78b709fb5a3f8cf4735f67a90} 
+std\+::vector$<$ \mbox{\hyperlink{struct_loom_1_1_component_base}{Component\+Base}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries m\+\_\+physicsables} \{ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{struct_loom_1_1_loom_object}{Loom\+::\+Loom\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string {\bfseries m\+\_\+name}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_loom_1_1_game_object_ae3e64ad32c1fdf83acaa7b8215df224e}\label{struct_loom_1_1_game_object_ae3e64ad32c1fdf83acaa7b8215df224e} 
+static std\+::atomic$<$ size\+\_\+t $>$ {\bfseries num\+\_\+objects} = 0
+\item 
+\Hypertarget{struct_loom_1_1_game_object_ab4d7d63be9d52959f5bdd5918e75886d}\label{struct_loom_1_1_game_object_ab4d7d63be9d52959f5bdd5918e75886d} 
+static std\+::atomic$<$ size\+\_\+t $>$ {\bfseries id\+\_\+counter} = 0
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{struct_loom_1_1_loom_object}{Loom\+::\+Loom\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::recursive\+\_\+mutex {\bfseries mutex}
+\item 
+static std\+::unordered\+\_\+map$<$ uint64\+\_\+t, \mbox{\hyperlink{struct_loom_1_1_loom_object}{Loom\+Object}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries by\+\_\+id} \{ \}
+\item 
+static std\+::unordered\+\_\+map$<$ std\+::string, \mbox{\hyperlink{struct_loom_1_1_loom_object}{Loom\+Object}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries by\+\_\+name} \{ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_loom_1_1_game_object_a1de2ad723a4f91a6b78380fb6091ee23}\label{struct_loom_1_1_game_object_a1de2ad723a4f91a6b78380fb6091ee23} 
+struct {\bfseries Scene}
+\item 
+\Hypertarget{struct_loom_1_1_game_object_af33d4d98d537f7a993d06c4655e42c31}\label{struct_loom_1_1_game_object_af33d4d98d537f7a993d06c4655e42c31} 
+struct {\bfseries Engine}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{struct_loom_1_1_loom_object}{Loom\+::\+Loom\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+const uint64\+\_\+t {\bfseries m\+\_\+\+ID} = Initialize()
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Loom/\+Loom WASM/Game\+Object.\+h\item 
+Loom/\+Loom WASM/Game\+Object.\+cpp\end{DoxyCompactItemize}

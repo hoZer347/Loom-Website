@@ -1,0 +1,71 @@
+\doxysection{Loom\+::Loom\+Object Struct Reference}
+\hypertarget{struct_loom_1_1_loom_object}{}\label{struct_loom_1_1_loom_object}\index{Loom::LoomObject@{Loom::LoomObject}}
+Inheritance diagram for Loom\+::Loom\+Object\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.962963cm]{struct_loom_1_1_loom_object}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_loom_1_1_loom_object_a065aab6fda5d8419a56aaeb1fa76f2ea}\label{struct_loom_1_1_loom_object_a065aab6fda5d8419a56aaeb1fa76f2ea} 
+const std\+::string \& {\bfseries Get\+Name} ()
+\item 
+\Hypertarget{struct_loom_1_1_loom_object_ab534ed7c4de7060af09478562ae7e763}\label{struct_loom_1_1_loom_object_ab534ed7c4de7060af09478562ae7e763} 
+void {\bfseries Set\+Name} (const std\+::string \&name)
+\item 
+\Hypertarget{struct_loom_1_1_loom_object_a3e5ae43a35a7554b021691e7edace852}\label{struct_loom_1_1_loom_object_a3e5ae43a35a7554b021691e7edace852} 
+constexpr std\+::string {\bfseries Name\+And\+ID} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_loom_1_1_loom_object_a14bed26e6054d36a6625944e19a09ab5}\label{struct_loom_1_1_loom_object_a14bed26e6054d36a6625944e19a09ab5} 
+{\footnotesize template$<$typename T = Loom\+Object$>$ }\\static constexpr const T \texorpdfstring{$\ast$}{*} {\bfseries Get\+By\+ID} (const uint64\+\_\+t \&ID)
+\item 
+\Hypertarget{struct_loom_1_1_loom_object_a7c2a734079b5f336eb59931ec412c7ab}\label{struct_loom_1_1_loom_object_a7c2a734079b5f336eb59931ec412c7ab} 
+{\footnotesize template$<$typename T = Loom\+Object$>$ }\\static constexpr T \texorpdfstring{$\ast$}{*} {\bfseries Get\+By\+Name} (const std\+::string \&name)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_loom_1_1_loom_object_a39284a5a938f4c9d3d1d561949fab039}\label{struct_loom_1_1_loom_object_a39284a5a938f4c9d3d1d561949fab039} 
+const uint64\+\_\+t {\bfseries m\+\_\+\+ID} = Initialize()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_loom_1_1_loom_object_adbb7813d939e3a468608b0389982d22c}\label{struct_loom_1_1_loom_object_adbb7813d939e3a468608b0389982d22c} 
+uint64\+\_\+t {\bfseries Initialize} ()
+\item 
+\Hypertarget{struct_loom_1_1_loom_object_a26090ab4c262c8d63b9d2826865688d0}\label{struct_loom_1_1_loom_object_a26090ab4c262c8d63b9d2826865688d0} 
+virtual void {\bfseries On\+Serialize} ()
+\item 
+\Hypertarget{struct_loom_1_1_loom_object_a9e5509f6d88f74fe2b7febdae05771ea}\label{struct_loom_1_1_loom_object_a9e5509f6d88f74fe2b7febdae05771ea} 
+virtual void {\bfseries On\+Deserialize} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_loom_1_1_loom_object_a079f0f476611530b659c8ce63a0912e7}\label{struct_loom_1_1_loom_object_a079f0f476611530b659c8ce63a0912e7} 
+std\+::string {\bfseries m\+\_\+name}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_loom_1_1_loom_object_a002d1fc46a88774eb64dd51344eb6c5c}\label{struct_loom_1_1_loom_object_a002d1fc46a88774eb64dd51344eb6c5c} 
+static std\+::recursive\+\_\+mutex {\bfseries mutex}
+\item 
+\Hypertarget{struct_loom_1_1_loom_object_a593a876825c653f6a9b064164e8892fa}\label{struct_loom_1_1_loom_object_a593a876825c653f6a9b064164e8892fa} 
+static std\+::unordered\+\_\+map$<$ uint64\+\_\+t, \mbox{\hyperlink{struct_loom_1_1_loom_object}{Loom\+Object}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries by\+\_\+id} \{ \}
+\item 
+\Hypertarget{struct_loom_1_1_loom_object_a650c93581d9f48cded68ef0538cd2c39}\label{struct_loom_1_1_loom_object_a650c93581d9f48cded68ef0538cd2c39} 
+static std\+::unordered\+\_\+map$<$ std\+::string, \mbox{\hyperlink{struct_loom_1_1_loom_object}{Loom\+Object}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries by\+\_\+name} \{ \}
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Loom/\+Loom WASM/Loom\+Object.\+h\item 
+Loom/\+Loom WASM/Loom\+Object.\+cpp\end{DoxyCompactItemize}

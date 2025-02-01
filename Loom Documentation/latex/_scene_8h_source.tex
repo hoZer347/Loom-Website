@@ -1,0 +1,42 @@
+\doxysection{Scene.\+h}
+\hypertarget{_scene_8h_source}{}\label{_scene_8h_source}\index{Loom/Loom WASM/Scene.h@{Loom/Loom WASM/Scene.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ "{}Macro\ Helpers.h"{}}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}GameObject.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <thread>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <latch>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <semaphore>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{namespace\ }Loom}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{struct\ }Scene\ final\ :}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{struct_loom_1_1_loom_object}{LoomObject}}}
+\DoxyCodeLine{00016\ \ \ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ Scene(\textcolor{keyword}{const}\ std::string\&\ name\ =\ \textcolor{stringliteral}{"{}Scene"{}},\ \textcolor{keywordtype}{int}\ thread\_id\ =\ 0);}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \string~Scene();}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ T*\ Attach(\textcolor{keyword}{auto}\&\&...\ args)\ \{\ \textcolor{keywordflow}{return}\ root.Attach<T>(args...);\ \};}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_loom_1_1_game_object}{GameObject}}*\ AddChild(\textcolor{keyword}{const}\ std::string\&\ m\_name\ =\ \textcolor{stringliteral}{"{}New\ GameObject"{}})\ \{\ \textcolor{keywordflow}{return}\ root.AddChild(m\_name);\ \};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ std::atomic<bool>\ is\_engine\_running\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{struct\ }MainMenu;}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{struct\ }Engine;}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ thread\_id;}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_loom_1_1_game_object}{GameObject}}\ root;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ std::recursive\_mutex\ mutex\{\ \};}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ std::vector<Scene*>\ allScenes\{\ \};}
+\DoxyCodeLine{00035\ \ \ \ \ \};}
+\DoxyCodeLine{00036\ \};}
+
+\end{DoxyCode}

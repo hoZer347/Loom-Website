@@ -1,0 +1,114 @@
+\doxysection{Macro Helpers.\+h}
+\hypertarget{_macro_01_helpers_8h_source}{}\label{_macro_01_helpers_8h_source}\index{Loom/Loom WASM/Macro Helpers.h@{Loom/Loom WASM/Macro Helpers.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#pragma\ warning(disable\ :\ 5103)}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00009\ \textcolor{comment}{//}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ \ HAS\_FUNCTION\_DECL:\ Sets\ up\ a\ template\ function\ that\ returns\ true\ if\ T\ contains\ "{}function\_name"{}}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ \ HAS\_FUNCTION\_TEST:\ The\ test\ result\ set\ up\ by\ HAS\_FUNCTION\_IMPL}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ \ -\/\ Note:}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ \ \ \ \ \ -\/\ HAS\_FUNCTION\_DECL\ must\ be\ called\ globally}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ \ \ \ \ \ -\/\ HAS\_FUNCTION\_TEST\ must\ be\ called\ AFTER\ HAS\_FUNCTION\_IMPL}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ \ -\/\ Example:}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ \ HAS\_FUNCTION\_DECL(push\_back)}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ \ HAS\_FUNCTION\_TEST(std::vector<int>,\ push\_back)\ -\/>\ TRUE}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ HAS\_FUNCTION\_DECL(function\_name)\(\backslash\)}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\ \ \ \ template\ <typename\ T>\(\backslash\)}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\ \ \ \ class\ has\_\#\#function\_name\#\#\ \{\(\backslash\)}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\ \ \ \ private:\(\backslash\)}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ template\ <typename\ U>\(\backslash\)}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ static\ constexpr\ auto\ check(int)\ -\/>\ decltype(std::declval<U>().\#\#function\_name\#\#(),\ std::true\_type\{\})\(\backslash\)}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \{\(\backslash\)}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ return\ std::true\_type\{\};\(\backslash\)}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \};\(\backslash\)}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\(\backslash\)}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ template\ <typename>\(\backslash\)}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ static\ constexpr\ std::false\_type\ check(...)\(\backslash\)}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \{\(\backslash\)}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ return\ std::false\_type\{\};\(\backslash\)}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \};\(\backslash\)}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\(\backslash\)}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\ \ \ \ public:\(\backslash\)}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ static\ constexpr\ bool\ value\ =\ decltype(check<T>(0))::value;\(\backslash\)}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\ \ \ \ \};}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ HAS\_FUNCTION\_TEST(class\_name,\ function\_name)\ has\_\#\#function\_name<class\_name>::value}}
+\DoxyCodeLine{00039\ \textcolor{comment}{//}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00044\ \textcolor{comment}{//}}
+\DoxyCodeLine{00045\ \textcolor{comment}{//\ \ HAS\_VARIABLE\_DECL:\ Sets\ up\ a\ template\ function\ that\ returns\ true\ if\ T\ contains\ "{}member\_variable\_name"{}}}
+\DoxyCodeLine{00046\ \textcolor{comment}{//\ \ HAS\_VARIABLE\_TEST:\ The\ test\ result\ set\ up\ by\ HAS\_VARIABLE\_IMPL}}
+\DoxyCodeLine{00047\ \textcolor{comment}{//\ \ -\/\ Note:}}
+\DoxyCodeLine{00048\ \textcolor{comment}{//\ \ \ \ \ \ -\/\ HAS\_VARIABLE\_DECL\ must\ be\ called\ globally}}
+\DoxyCodeLine{00049\ \textcolor{comment}{//\ \ \ \ \ \ -\/\ HAS\_VARIABLE\_TEST\ must\ be\ called\ AFTER\ HAS\_VARIABLE\_IMPL}}
+\DoxyCodeLine{00050\ \textcolor{comment}{//\ \ -\/\ Example:}}
+\DoxyCodeLine{00051\ \textcolor{comment}{//\ \ HAS\_VARIABLE\_DECL(size)}}
+\DoxyCodeLine{00052\ \textcolor{comment}{//\ \ HAS\_VARIABLE\_TEST(std::vector<int>,\ size)\ -\/>\ TRUE}}
+\DoxyCodeLine{00053\ \textcolor{comment}{//}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ HAS\_VARIABLE\_DECL(member\_variable\_name)\ \(\backslash\)}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\ \ \ \ template\ <typename\ T>\ \(\backslash\)}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\ \ \ \ class\ has\_\#\#member\_variable\_name\#\#\ \{\ \(\backslash\)}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\ \ \ \ private:\ \(\backslash\)}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ template\ <typename\ U>\ \(\backslash\)}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ static\ constexpr\ auto\ check(int)\ -\/>\ decltype(std::declval<U>().member\_variable\_name,\ std::true\_type\{\})\ \(\backslash\)}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \{\ \(\backslash\)}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ return\ std::true\_type\{\};\ \(\backslash\)}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \}\ \(\backslash\)}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ template\ <typename>\ \(\backslash\)}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ static\ constexpr\ std::false\_type\ check(...)\ \(\backslash\)}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \{\ \(\backslash\)}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ return\ std::false\_type\{\};\ \(\backslash\)}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \}\ \(\backslash\)}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\ \ \ \ public:\ \(\backslash\)}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ static\ constexpr\ bool\ value\ =\ decltype(check<T>(0))::value;\ \(\backslash\)}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\ \ \ \ \};}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#define\ HAS\_VARIABLE\_TEST(class\_name,\ member\_variable\_name)\ has\_\#\#member\_variable\_name\#\#<class\_name>::value}}
+\DoxyCodeLine{00074\ \textcolor{comment}{//}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{comment}{//\ TODO:\ Likely\ not\ the\ optimal\ way\ to\ implement\ serialization}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#define\ SERIALIZE(...)\(\backslash\)}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{void\ OnSerialize()\ override\(\backslash\)}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\{\(\backslash\)}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\ \ \ \ std::cout\ <<\ "{}Serializing:\ "{}\ <<\ typeid(*this).name()\ <<\ std::endl;\(\backslash\)}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\ \ \ \ Serialize(GetName().c\_str(),\ this,\ \_\_VA\_ARGS\_\_);\(\backslash\)}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\};\(\backslash\)}}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{void\ OnDeserialize()\ override\(\backslash\)}}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\{\(\backslash\)}}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\ \ \ \ std::cout\ <<\ "{}Deserializing:\ "{}\ <<\ typeid(*this).name()\ <<\ std::endl;\(\backslash\)}}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\ \ \ \ Deserialize(GetName().c\_str(),\ this,\ \_\_VA\_ARGS\_\_);\(\backslash\)}}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\};\(\backslash\)}}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{}}
+\DoxyCodeLine{00091\ \textcolor{comment}{//}}
+\DoxyCodeLine{00092\ \textcolor{comment}{//\ Str:\ Used\ to\ put\ unsigned\ char*'s\ as\ template\ arguments}}
+\DoxyCodeLine{00093\ \textcolor{comment}{//\ -\/\ Example:}}
+\DoxyCodeLine{00094\ \textcolor{comment}{//\ \ \ \ \ \ template\ <Str\ str>\ void\ Print<Str\ str>()}}
+\DoxyCodeLine{00095\ \textcolor{comment}{//\ \ \ \ \ \ \{}}
+\DoxyCodeLine{00096\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ std::cout\ <<\ str\ <<\ std::endl;}}
+\DoxyCodeLine{00097\ \textcolor{comment}{//\ \ \ \ \ \ \};}}
+\DoxyCodeLine{00098\ \textcolor{comment}{//\ }}
+\DoxyCodeLine{00099\ \textcolor{comment}{//\ \ \ \ \ \ Print<"{}Hello\ World"{}>();\ =>\ Hello\ World!}}
+\DoxyCodeLine{00100\ \textcolor{comment}{//}}
+\DoxyCodeLine{00101\ \textcolor{keyword}{template}<\textcolor{keywordtype}{size\_t}\ N>}
+\DoxyCodeLine{00102\ \textcolor{keyword}{struct\ }Str\ final}
+\DoxyCodeLine{00103\ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{constexpr}\ Str(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}(\&str)[N])}
+\DoxyCodeLine{00105\ \ \ \ \ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ std::copy\_n(str,\ N,\ value);}
+\DoxyCodeLine{00107\ \ \ \ \ \};}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{char}\ value[N];}
+\DoxyCodeLine{00109\ \};}
+\DoxyCodeLine{00110\ \textcolor{comment}{//}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#define\ VARIABLE\_NAME(name)\ \#name}}
+
+\end{DoxyCode}

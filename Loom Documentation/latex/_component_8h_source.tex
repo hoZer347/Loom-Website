@@ -1,0 +1,55 @@
+\doxysection{Component.\+h}
+\hypertarget{_component_8h_source}{}\label{_component_8h_source}\index{Loom/Loom WASM/Component.h@{Loom/Loom WASM/Component.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}LoomObject.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <typeinfo>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }Loom}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_loom_1_1_game_object}{GameObject}};}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_loom_1_1_component_base}{ComponentBase}}\ :}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{struct_loom_1_1_loom_object}{LoomObject}}}
+\DoxyCodeLine{00016\ \ \ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ OnAttach()\ \{\};}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ OnDetach()\ \{\};}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ OnGui()\ \{\};}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ OnUpdate()\ \{\};}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ OnRender()\ \{\};}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ OnPhysics()\ \{\};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{struct_loom_1_1_component_base}{\string~ComponentBase}}()\ \{\};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ GetClassName()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_name;\ \};}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ GameObject\ \textcolor{keyword}{const}*\ GetGameObject()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_gameObject;\ \};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{struct\ }GameObject;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ GameObject*\ m\_gameObject;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Gui()\ \{\};}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ m\_type\_name;}
+\DoxyCodeLine{00035\ \ \ \ \ \};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }Component\ :}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{struct_loom_1_1_component_base}{ComponentBase}}}
+\DoxyCodeLine{00040\ \ \ \ \ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \string~Component()\ \{\};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ Component()}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ m\_type\_name\ =\ \textcolor{keyword}{typeid}(T).name();}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00048\ \ \ \ \ \};}
+\DoxyCodeLine{00049\ \};}
+
+\end{DoxyCode}

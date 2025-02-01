@@ -1,0 +1,135 @@
+\doxysection{C\+:/\+Users/3hoze/\+Desktop/\+Loom/\+Loom WASM/\+Macro Helpers.\+h File Reference}
+\hypertarget{_macro_01_helpers_8h}{}\label{_macro_01_helpers_8h}\index{C:/Users/3hoze/Desktop/Loom/Loom WASM/Macro Helpers.h@{C:/Users/3hoze/Desktop/Loom/Loom WASM/Macro Helpers.h}}
+{\ttfamily \#include $<$algorithm$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_str}{Str$<$ N $>$}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_macro_01_helpers_8h_a178802cf3cc754d7f4611e1bf0663289}{HAS\+\_\+\+FUNCTION\+\_\+\+DECL}}(function\+\_\+name)
+\item 
+\#define \mbox{\hyperlink{_macro_01_helpers_8h_a6d8259a32677287a2b4cb03433c89924}{HAS\+\_\+\+FUNCTION\+\_\+\+TEST}}(class\+\_\+name,  function\+\_\+name)
+\item 
+\#define \mbox{\hyperlink{_macro_01_helpers_8h_a28c27dd62c6969b72193f081e8850ac5}{HAS\+\_\+\+VARIABLE\+\_\+\+DECL}}(member\+\_\+variable\+\_\+name)
+\item 
+\#define \mbox{\hyperlink{_macro_01_helpers_8h_ae8943c7f9524e298283cfc8b784b9370}{HAS\+\_\+\+VARIABLE\+\_\+\+TEST}}(class\+\_\+name,  member\+\_\+variable\+\_\+name)
+\item 
+\#define \mbox{\hyperlink{_macro_01_helpers_8h_afc026a1f42e52d9e0db984268739472c}{SERIALIZE}}(...)
+\item 
+\#define \mbox{\hyperlink{_macro_01_helpers_8h_ad7a280d7fa528f1b3b2d473c0a5ec384}{VARIABLE\+\_\+\+NAME}}(name)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_macro_01_helpers_8h_a178802cf3cc754d7f4611e1bf0663289}\index{Macro Helpers.h@{Macro Helpers.h}!HAS\_FUNCTION\_DECL@{HAS\_FUNCTION\_DECL}}
+\index{HAS\_FUNCTION\_DECL@{HAS\_FUNCTION\_DECL}!Macro Helpers.h@{Macro Helpers.h}}
+\doxysubsubsection{\texorpdfstring{HAS\_FUNCTION\_DECL}{HAS\_FUNCTION\_DECL}}
+{\footnotesize\ttfamily \label{_macro_01_helpers_8h_a178802cf3cc754d7f4611e1bf0663289} 
+\#define HAS\+\_\+\+FUNCTION\+\_\+\+DECL(\begin{DoxyParamCaption}\item[{}]{function\+\_\+name}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{class\ }has\_\#\#function\_name\#\#\ \{\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{private}:\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ U>\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{auto}\ check(\textcolor{keywordtype}{int})\ -\/>\ \textcolor{keyword}{decltype}(std::declval<U>().\#\#function\_name\#\#(),\ std::true\_type\{\})\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::true\_type\{\};\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \};\(\backslash\)}
+\DoxyCodeLine{\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}>\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ std::false\_type\ check(...)\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::false\_type\{\};\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \};\(\backslash\)}
+\DoxyCodeLine{\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}:\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{bool}\ value\ =\ \textcolor{keyword}{decltype}(check<T>(0))::value;\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \};}
+
+\end{DoxyCode}
+\Hypertarget{_macro_01_helpers_8h_a6d8259a32677287a2b4cb03433c89924}\index{Macro Helpers.h@{Macro Helpers.h}!HAS\_FUNCTION\_TEST@{HAS\_FUNCTION\_TEST}}
+\index{HAS\_FUNCTION\_TEST@{HAS\_FUNCTION\_TEST}!Macro Helpers.h@{Macro Helpers.h}}
+\doxysubsubsection{\texorpdfstring{HAS\_FUNCTION\_TEST}{HAS\_FUNCTION\_TEST}}
+{\footnotesize\ttfamily \label{_macro_01_helpers_8h_a6d8259a32677287a2b4cb03433c89924} 
+\#define HAS\+\_\+\+FUNCTION\+\_\+\+TEST(\begin{DoxyParamCaption}\item[{}]{class\+\_\+name}{, }\item[{}]{function\+\_\+name}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{has\_\#\#function\_name<class\_name>::value}
+
+\end{DoxyCode}
+\Hypertarget{_macro_01_helpers_8h_a28c27dd62c6969b72193f081e8850ac5}\index{Macro Helpers.h@{Macro Helpers.h}!HAS\_VARIABLE\_DECL@{HAS\_VARIABLE\_DECL}}
+\index{HAS\_VARIABLE\_DECL@{HAS\_VARIABLE\_DECL}!Macro Helpers.h@{Macro Helpers.h}}
+\doxysubsubsection{\texorpdfstring{HAS\_VARIABLE\_DECL}{HAS\_VARIABLE\_DECL}}
+{\footnotesize\ttfamily \label{_macro_01_helpers_8h_a28c27dd62c6969b72193f081e8850ac5} 
+\#define HAS\+\_\+\+VARIABLE\+\_\+\+DECL(\begin{DoxyParamCaption}\item[{}]{member\+\_\+variable\+\_\+name}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{class\ }has\_\#\#member\_variable\_name\#\#\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{private}:\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ U>\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{auto}\ check(\textcolor{keywordtype}{int})\ -\/>\ \textcolor{keyword}{decltype}(std::declval<U>().member\_variable\_name,\ std::true\_type\{\})\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::true\_type\{\};\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}>\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ std::false\_type\ check(...)\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::false\_type\{\};\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{public}:\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{bool}\ value\ =\ \textcolor{keyword}{decltype}(check<T>(0))::value;\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \};}
+
+\end{DoxyCode}
+\Hypertarget{_macro_01_helpers_8h_ae8943c7f9524e298283cfc8b784b9370}\index{Macro Helpers.h@{Macro Helpers.h}!HAS\_VARIABLE\_TEST@{HAS\_VARIABLE\_TEST}}
+\index{HAS\_VARIABLE\_TEST@{HAS\_VARIABLE\_TEST}!Macro Helpers.h@{Macro Helpers.h}}
+\doxysubsubsection{\texorpdfstring{HAS\_VARIABLE\_TEST}{HAS\_VARIABLE\_TEST}}
+{\footnotesize\ttfamily \label{_macro_01_helpers_8h_ae8943c7f9524e298283cfc8b784b9370} 
+\#define HAS\+\_\+\+VARIABLE\+\_\+\+TEST(\begin{DoxyParamCaption}\item[{}]{class\+\_\+name}{, }\item[{}]{member\+\_\+variable\+\_\+name}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{has\_\#\#member\_variable\_name\#\#<class\_name>::value}
+
+\end{DoxyCode}
+\Hypertarget{_macro_01_helpers_8h_afc026a1f42e52d9e0db984268739472c}\index{Macro Helpers.h@{Macro Helpers.h}!SERIALIZE@{SERIALIZE}}
+\index{SERIALIZE@{SERIALIZE}!Macro Helpers.h@{Macro Helpers.h}}
+\doxysubsubsection{\texorpdfstring{SERIALIZE}{SERIALIZE}}
+{\footnotesize\ttfamily \label{_macro_01_helpers_8h_afc026a1f42e52d9e0db984268739472c} 
+\#define SERIALIZE(\begin{DoxyParamCaption}\item[{}]{}...{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ OnSerialize()\ override\(\backslash\)}
+\DoxyCodeLine{\{\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Serializing:\ "{}}\ <<\ \textcolor{keyword}{typeid}(*this).name()\ <<\ std::endl;\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ Serialize(GetName().c\_str(),\ \textcolor{keyword}{this},\ \_\_VA\_ARGS\_\_);\(\backslash\)}
+\DoxyCodeLine{\};\(\backslash\)}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ OnDeserialize()\ override\(\backslash\)}
+\DoxyCodeLine{\{\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Deserializing:\ "{}}\ <<\ \textcolor{keyword}{typeid}(*this).name()\ <<\ std::endl;\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ Deserialize(GetName().c\_str(),\ \textcolor{keyword}{this},\ \_\_VA\_ARGS\_\_);\(\backslash\)}
+\DoxyCodeLine{\};\(\backslash\)}
+
+\end{DoxyCode}
+\Hypertarget{_macro_01_helpers_8h_ad7a280d7fa528f1b3b2d473c0a5ec384}\index{Macro Helpers.h@{Macro Helpers.h}!VARIABLE\_NAME@{VARIABLE\_NAME}}
+\index{VARIABLE\_NAME@{VARIABLE\_NAME}!Macro Helpers.h@{Macro Helpers.h}}
+\doxysubsubsection{\texorpdfstring{VARIABLE\_NAME}{VARIABLE\_NAME}}
+{\footnotesize\ttfamily \label{_macro_01_helpers_8h_ad7a280d7fa528f1b3b2d473c0a5ec384} 
+\#define VARIABLE\+\_\+\+NAME(\begin{DoxyParamCaption}\item[{}]{name}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#name}}
+
+\end{DoxyCode}

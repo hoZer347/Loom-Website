@@ -1,0 +1,124 @@
+\doxysection{Loom\+::Mesh Struct Reference}
+\hypertarget{struct_loom_1_1_mesh}{}\label{struct_loom_1_1_mesh}\index{Loom::Mesh@{Loom::Mesh}}
+Inheritance diagram for Loom\+::Mesh\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{struct_loom_1_1_mesh}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_loom_1_1_mesh_af325aeb8d51967f551ab36398b397602}\label{struct_loom_1_1_mesh_af325aeb8d51967f551ab36398b397602} 
+{\bfseries Mesh} (uint32\+\_\+t primitive\+\_\+id)
+\item 
+void \mbox{\hyperlink{struct_loom_1_1_mesh_a7e9352ad196ff5e0e6a17bbdf56a780c}{On\+Render}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{struct_loom_1_1_component_base}{Loom\+::\+Component\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual constexpr void {\bfseries On\+Attach} ()
+\item 
+virtual constexpr void {\bfseries On\+Detach} ()
+\item 
+virtual constexpr void {\bfseries On\+Gui} ()
+\item 
+virtual constexpr void {\bfseries On\+Update} ()
+\item 
+virtual constexpr void {\bfseries On\+Physics} ()
+\item 
+const std\+::string \& {\bfseries Get\+Class\+Name} () const
+\item 
+\mbox{\hyperlink{struct_loom_1_1_game_object}{Game\+Object}} const \texorpdfstring{$\ast$}{*} {\bfseries Get\+Game\+Object} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{struct_loom_1_1_loom_object}{Loom\+::\+Loom\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::string \& {\bfseries Get\+Name} ()
+\item 
+void {\bfseries Set\+Name} (const std\+::string \&name)
+\item 
+constexpr std\+::string {\bfseries Name\+And\+ID} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_loom_1_1_mesh_af459f302ec9bb6232eca1a8a7acad1ac}\label{struct_loom_1_1_mesh_af459f302ec9bb6232eca1a8a7acad1ac} 
+\mbox{\hyperlink{struct_loom_1_1_material}{Material}} \texorpdfstring{$\ast$}{*} {\bfseries material} = nullptr
+\item 
+\Hypertarget{struct_loom_1_1_mesh_a967b52a03eb36abfdeaf45e11a7ea667}\label{struct_loom_1_1_mesh_a967b52a03eb36abfdeaf45e11a7ea667} 
+uint32\+\_\+t {\bfseries primitive\+\_\+id}
+\item 
+\Hypertarget{struct_loom_1_1_mesh_adee076d5208088414066b616f193a9c3}\label{struct_loom_1_1_mesh_adee076d5208088414066b616f193a9c3} 
+std\+::vector$<$ float $>$ {\bfseries m\+\_\+vertices}
+\item 
+\Hypertarget{struct_loom_1_1_mesh_a7bfae2b7de0cd909ff17123571323cde}\label{struct_loom_1_1_mesh_a7bfae2b7de0cd909ff17123571323cde} 
+std\+::vector$<$ uint32\+\_\+t $>$ {\bfseries m\+\_\+indices}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{struct_loom_1_1_loom_object}{Loom\+::\+Loom\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+const uint64\+\_\+t {\bfseries m\+\_\+\+ID} = Initialize()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{struct_loom_1_1_loom_object}{Loom\+::\+Loom\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T = Loom\+Object$>$ }\\static constexpr const T \texorpdfstring{$\ast$}{*} {\bfseries Get\+By\+ID} (const uint64\+\_\+t \&ID)
+\item 
+{\footnotesize template$<$typename T = Loom\+Object$>$ }\\static constexpr T \texorpdfstring{$\ast$}{*} {\bfseries Get\+By\+Name} (const std\+::string \&name)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{struct_loom_1_1_component_base}{Loom\+::\+Component\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries Gui} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{struct_loom_1_1_loom_object}{Loom\+::\+Loom\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+uint64\+\_\+t {\bfseries Initialize} ()
+\item 
+virtual void {\bfseries On\+Serialize} ()
+\item 
+virtual void {\bfseries On\+Deserialize} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{struct_loom_1_1_component_base}{Loom\+::\+Component\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_loom_1_1_game_object}{Game\+Object}} \texorpdfstring{$\ast$}{*} {\bfseries m\+\_\+game\+Object}
+\item 
+const char \texorpdfstring{$\ast$}{*} {\bfseries m\+\_\+type\+\_\+name}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{struct_loom_1_1_loom_object}{Loom\+::\+Loom\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string {\bfseries m\+\_\+name}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{struct_loom_1_1_loom_object}{Loom\+::\+Loom\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::recursive\+\_\+mutex {\bfseries mutex}
+\item 
+static std\+::unordered\+\_\+map$<$ uint64\+\_\+t, \mbox{\hyperlink{struct_loom_1_1_loom_object}{Loom\+Object}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries by\+\_\+id} \{ \}
+\item 
+static std\+::unordered\+\_\+map$<$ std\+::string, \mbox{\hyperlink{struct_loom_1_1_loom_object}{Loom\+Object}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries by\+\_\+name} \{ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_loom_1_1_mesh_a7e9352ad196ff5e0e6a17bbdf56a780c}\index{Loom::Mesh@{Loom::Mesh}!OnRender@{OnRender}}
+\index{OnRender@{OnRender}!Loom::Mesh@{Loom::Mesh}}
+\doxysubsubsection{\texorpdfstring{OnRender()}{OnRender()}}
+{\footnotesize\ttfamily \label{struct_loom_1_1_mesh_a7e9352ad196ff5e0e6a17bbdf56a780c} 
+void Loom\+::\+Mesh\+::\+On\+Render (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{struct_loom_1_1_component_base}{Loom\+::\+Component\+Base}}.
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Loom/\+Loom WASM/Mesh.\+h\item 
+Loom/\+Loom WASM/Mesh.\+cpp\end{DoxyCompactItemize}

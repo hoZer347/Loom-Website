@@ -1,0 +1,22 @@
+\doxysection{Loom\+::has\+\_\+method\texorpdfstring{$<$}{<} T, Ret, Args \texorpdfstring{$>$}{>} Struct Template Reference}
+\hypertarget{struct_loom_1_1has__method}{}\label{struct_loom_1_1has__method}\index{Loom::has\_method$<$ T, Ret, Args $>$@{Loom::has\_method$<$ T, Ret, Args $>$}}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_loom_1_1has__method_a88a15d2c1a127f06da6ec336f06726de}\label{struct_loom_1_1has__method_a88a15d2c1a127f06da6ec336f06726de} 
+{\footnotesize template$<$typename U$>$ }\\static auto {\bfseries test} (U \texorpdfstring{$\ast$}{*}) -\/$>$ decltype(std\+::is\+\_\+same\+\_\+v$<$ decltype(\&U\+::\+On\+Attach), Ret(U\+::\texorpdfstring{$\ast$}{*})(Args...)$>$, std\+::true\+\_\+type\{\})
+\item 
+\Hypertarget{struct_loom_1_1has__method_a4b601792242bbe00b93de17b8d54b00f}\label{struct_loom_1_1has__method_a4b601792242bbe00b93de17b8d54b00f} 
+{\footnotesize template$<$typename$>$ }\\static std\+::false\+\_\+type {\bfseries test} (...)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_loom_1_1has__method_aec28b9dcd7ea7270f777f221a90f88c8}\label{struct_loom_1_1has__method_aec28b9dcd7ea7270f777f221a90f88c8} 
+static constexpr bool {\bfseries value} = decltype(test$<$T$>$(nullptr))\+::value
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Loom/\+Loom WASM/Game\+Object.\+h\end{DoxyCompactItemize}
